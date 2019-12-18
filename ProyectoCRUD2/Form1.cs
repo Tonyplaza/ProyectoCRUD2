@@ -50,6 +50,7 @@ namespace ProyectoCRUD2
             try
             {
                 x = Academico.EstudianteDAO.guardar(estudiante);
+                cargarGridEstudiantes();
                 MessageBox.Show("Filas agregadas: " + x.ToString());
             }catch (Exception ex)
             {
@@ -57,6 +58,15 @@ namespace ProyectoCRUD2
             }
             Academico.EstudianteDAO.guardar(estudiante);
             MessageBox.Show("Filas agregadas: " + x.ToString());
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cargarGridEstudiantes();
+        }
+        private void cargarGridEstudiantes()
+        {
+            this.dgEstudiantes.DataSource = Academico.EstudianteDAO.getDatos();
         }
     }
 }

@@ -56,8 +56,6 @@ namespace ProyectoCRUD2
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-            Academico.EstudianteDAO.guardar(estudiante);
-            MessageBox.Show("Filas agregadas: " + x.ToString());
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -67,6 +65,21 @@ namespace ProyectoCRUD2
         private void cargarGridEstudiantes()
         {
             this.dgEstudiantes.DataSource = Academico.EstudianteDAO.getDatos();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.txtMatricula.Text = String.Empty;
+            this.txtApellidos.Text = String.Empty;
+            this.txtNombres.Text = String.Empty;
+            this.txtCorreo.Text = String.Empty;
+            this.cmbGenero.Text = String.Empty;
+            this.txtMatricula.Focus();
         }
     }
 }

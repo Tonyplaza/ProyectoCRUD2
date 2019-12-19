@@ -35,6 +35,10 @@ namespace Academico
             conn.Close();
             return x;
         }
+        /// <summary>
+        /// Devuelve todas las filas de la tabla
+        /// </summary>
+        /// <returns></returns>
         public static DataTable getDatos()
         {
             SqlConnection conn = new SqlConnection(cadenaConexion);
@@ -46,6 +50,56 @@ namespace Academico
             ad.Fill(dt);
 
             return dt;
+        }
+        public static DataTable getNombresCompletos()
+        {
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+            string sql = "select matricula,upper(apellidos + ' ' + nombres) as Estudiante " +
+                 " from estudiantes order by apellidos,nombres";
+
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+
+            return dt;
+        }
+        /// <summary>
+        /// Obtiene un estudiante por su numero de matricula
+        /// </summary>
+        /// <param name="matricula"></param>
+        /// <returns></returns>
+        public static DataTable getDatos(String matricula)
+        {
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+            string sql = "select matricula,apellidos,nombres,genero," +
+                 "fechaNacimiento, email from estudiantes " +
+                 "where matricula=@matricula " +
+                 "order by apellidos, nombres";
+
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
+            ad.SelectCommand.Parameters.AddWithValue("@matricula", matricula);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+
+            return dt;
+        }
+        public static int delete(String matricula)
+        {
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+
+            string sql = "delete from estudiantes "+
+                "where matricula=@matricula";
+
+            //definimos un comando 
+            SqlCommand comando = new SqlCommand(sql, conn);
+            //vonfiguramos los parametros
+
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.Parameters.AddWithValue("@matricula",matricula);
+            conn.Open();
+            int x = comando.ExecuteNonQuery(); //ejecutamos el comando
+            conn.Close();
+            return x;
         }
     }
 }

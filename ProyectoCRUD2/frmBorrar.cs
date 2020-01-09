@@ -47,7 +47,17 @@ namespace ProyectoCRUD2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int x = Academico.EstudianteDAO.delete(this.cmbMatricula.SelectedValue.ToString());
+            if (MessageBox.Show("¿Estas seguro de eliminar registro de este estudiante?"
+                , "eliminar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                int x = Academico.EstudianteDAO.delete(this.cmbMatricula.SelectedValue.ToString());
+                this.txtApellidos.Clear();
+                this.txtNombres.Clear();
+                this.txtfechaNacimiento.Clear();
+                this.txtCorreo.Clear();
+                DataTable dt = Academico.EstudianteDAO.getNombresCompletos();
+                this.cmbMatricula.DataSource = dt;
+            }
         }
     }
 }

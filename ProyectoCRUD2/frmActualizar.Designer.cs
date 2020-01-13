@@ -81,7 +81,6 @@
             this.txtNombres.Location = new System.Drawing.Point(202, 55);
             this.txtNombres.MaxLength = 30;
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.ReadOnly = true;
             this.txtNombres.Size = new System.Drawing.Size(153, 20);
             this.txtNombres.TabIndex = 21;
             // 
@@ -90,7 +89,6 @@
             this.txtApellidos.Location = new System.Drawing.Point(202, 20);
             this.txtApellidos.MaxLength = 30;
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.ReadOnly = true;
             this.txtApellidos.Size = new System.Drawing.Size(153, 20);
             this.txtApellidos.TabIndex = 20;
             // 
@@ -99,7 +97,6 @@
             this.txtCorreo.Location = new System.Drawing.Point(202, 157);
             this.txtCorreo.MaxLength = 80;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.ReadOnly = true;
             this.txtCorreo.Size = new System.Drawing.Size(100, 20);
             this.txtCorreo.TabIndex = 19;
             // 
@@ -107,8 +104,8 @@
             // 
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino"});
+            "Femenino",
+            "Masculino"});
             this.cmbGenero.Location = new System.Drawing.Point(202, 82);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(121, 21);
@@ -207,6 +204,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(79, 22);
             this.toolStripButton1.Text = "Actualizar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 

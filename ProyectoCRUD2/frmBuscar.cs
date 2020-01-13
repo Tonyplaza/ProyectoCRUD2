@@ -45,5 +45,10 @@ namespace ProyectoCRUD2
                 MessageBox.Show("No existe el estudiante...");
             }
         }
+
+        private void cmbMatricula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

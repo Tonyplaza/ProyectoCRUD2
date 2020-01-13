@@ -69,6 +69,7 @@ namespace ProyectoCRUD2
         {
             int x = 0;
             Academico.Estudiante estudiante = new Academico.Estudiante();
+            estudiante.Matricula = Convert.ToString (this.cmbMatricula.SelectedValue);
             estudiante.Apellidos = this.txtApellidos.Text;
             estudiante.Nombres = this.txtNombres.Text;
             estudiante.FechaNacimiento = Convert.ToDateTime(this.txtfechaNacimiento.Text);
@@ -82,17 +83,17 @@ namespace ProyectoCRUD2
             try
             {
                 x = Academico.EstudianteDAO.actualizar(estudiante);
-                cargarGridEstudiantes();
                 MessageBox.Show("Filas actualizadas: " + x.ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-        }
-        private void cargarGridEstudiantes()
-        {
-            this.dgEstudiantes.DataSource = Academico.EstudianteDAO.getDatos();
+
+            DataTable dt = Academico.EstudianteDAO.getNombresCompletos();
+            this.cmbMatricula.DataSource = dt;
+            this.cmbMatricula.DisplayMember = "Estudiante";
+            this.cmbMatricula.ValueMember = "Matricula";
         }
     }
 }

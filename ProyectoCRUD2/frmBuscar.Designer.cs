@@ -32,6 +32,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtfechaNacimiento = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtfechaNacimiento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,7 @@
             this.cmbMatricula.Name = "cmbMatricula";
             this.cmbMatricula.Size = new System.Drawing.Size(255, 21);
             this.cmbMatricula.TabIndex = 0;
+            this.cmbMatricula.SelectedIndexChanged += new System.EventHandler(this.cmbMatricula_SelectedIndexChanged);
             // 
             // btnBuscar
             // 
@@ -92,6 +93,13 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del estudiante";
+            // 
+            // txtfechaNacimiento
+            // 
+            this.txtfechaNacimiento.Location = new System.Drawing.Point(202, 122);
+            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
+            this.txtfechaNacimiento.Size = new System.Drawing.Size(100, 20);
+            this.txtfechaNacimiento.TabIndex = 22;
             // 
             // txtNombres
             // 
@@ -175,13 +183,6 @@
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Apellidos";
-            // 
-            // txtfechaNacimiento
-            // 
-            this.txtfechaNacimiento.Location = new System.Drawing.Point(202, 122);
-            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
-            this.txtfechaNacimiento.Size = new System.Drawing.Size(100, 20);
-            this.txtfechaNacimiento.TabIndex = 22;
             // 
             // frmBuscar
             // 

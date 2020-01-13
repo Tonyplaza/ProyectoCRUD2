@@ -10,7 +10,7 @@ namespace Academico
 {
     public static class EstudianteDAO
     {
-        private  static string cadenaConexion = @"server=L-PCT-104\SQLEXPRESS2016; database= TI2019; user id=sa; password=Lab123456";
+        private  static string cadenaConexion = @"server=A-SIS-050\SQLEXPRESS2016; database= TI2019; user id=sa; password=Lab123456";
         public static int guardar(Estudiante estudiante)
         {
             
@@ -106,20 +106,19 @@ namespace Academico
 
             //definimos un objeo conexion 
             SqlConnection conn = new SqlConnection(cadenaConexion);
-
-            string sql = "update into estudiantes(apellidos,nombres,genero," +
-                "fechaNacimiento, email) values(@apellidos,@nombres,@genero,@fechaNacimiento,@email)";
+            string sql = "UPDATE estudiantes SET apellidos=@apellidos,nombres=@nombres,genero=@genero," +
+                "fechaNacimiento=@fechaNacimiento, email=@email WHERE matricula=@matricula ";
             //definimos un comando 
             SqlCommand comando = new SqlCommand(sql, conn);
             //vonfiguramos los parametros
-
+            conn.Open();
             comando.CommandType = System.Data.CommandType.Text;
+            comando.Parameters.AddWithValue("@matricula", estudiante.Matricula);
             comando.Parameters.AddWithValue("@apellidos", estudiante.Apellidos);
             comando.Parameters.AddWithValue("@nombres", estudiante.Nombres);
             comando.Parameters.AddWithValue("@genero", estudiante.Genero);
             comando.Parameters.AddWithValue("@fechaNacimiento", estudiante.FechaNacimiento.Date);
             comando.Parameters.AddWithValue("@email", estudiante.Correo);
-            conn.Open();
             int x = comando.ExecuteNonQuery(); //ejecutamos el comando
             conn.Close();
             return x;

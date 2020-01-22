@@ -1,37 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
 using System.Threading.Tasks;
 
-namespace ProyectoCRUD2.Clases
+namespace Academico
 {
-    class UsuariosDAO
+    public static class UsuariosDAO
     {
         private static string cadenaConexion = @"server=L-PCT-104\SQLEXPRESS2016; database= TI2019; user id=sa; password=Lab123456";
-        public static int guardar(Usuarios usuarios)
+      
+        public static bool validaUsuario(String usuario, string clave)
         {
-
-            //definimos un objeo conexion 
             SqlConnection conn = new SqlConnection(cadenaConexion);
+            string sql = "select idlogin,nombreCompleto " +
+                 " from usuarios where login=@login and clave=@clave ";
 
-            string sql = "insert into estudiantes(idlogin,nombreCompleto,loguin,clave)" +
-                " values(@idlogin,@nombreCompleto,@loguin,@clave)";
-            //definimos un comando 
-            SqlCommand comando = new SqlCommand(sql, conn);
-            //vonfiguramos los parametros
-
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.Parameters.AddWithValue("@idloguin", usuarios.idLogin);
-            comando.Parameters.AddWithValue("@nombreCompleto", usuarios.nombreCompleto);
-            comando.Parameters.AddWithValue("@loguin", usuarios.login);
-            comando.Parameters.AddWithValue("@clave", usuarios.clave);
-            conn.Open();
-            int x = comando.ExecuteNonQuery(); //ejecutamos el comando
-            conn.Close();
-            return x;
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
+            ad.SelectCommand.Parameters.AddWithValue("@login", usuario);
+            ad.SelectCommand.Parameters.AddWithValue("@clave", clave);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+            if (dt.Rows.Count>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+        
     }
 }

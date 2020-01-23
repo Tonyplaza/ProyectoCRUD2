@@ -12,5 +12,6 @@ namespace Academico
         public String nombreCompleto { get; set; }
         public String login { get; set; }
         public String clave { get; set; }
+        public String tipoUsuario { get; set; }
     }
 }

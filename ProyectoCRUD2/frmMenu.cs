@@ -109,5 +109,12 @@ namespace ProyectoCRUD2
             frm1.MdiParent = this;
             frm1.Show();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Adm.frmUsuario frm1 = new Adm.frmUsuario();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
     }
 }

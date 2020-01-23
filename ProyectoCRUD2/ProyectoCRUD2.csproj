@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adm\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Estudiante.cs" />
     <Compile Include="Clases\EstudianteDAO.cs" />
     <Compile Include="Clases\Usuarios.cs" />
@@ -88,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Adm\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

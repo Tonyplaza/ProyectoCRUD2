@@ -13,14 +13,14 @@ namespace Academico
         private  static string cadenaConexion = @"server=L-PCT-104\SQLEXPRESS2016; database= TI2019; user id=sa; password=Lab123456";
         public static int guardar(Estudiante estudiante)
         {
-            
+
             //definimos un objeo conexion 
             SqlConnection conn = new SqlConnection(cadenaConexion);
 
-            string sql = "insert into estudiantes(matricula,apellidos,nombres,genero,"+
+            string sql = "insert into estudiantes(matricula,apellidos,nombres,genero," +
                 "fechaNacimiento, email) values(@matricula,@apellidos,@nombres,@genero,@fechaNacimiento,@email)";
             //definimos un comando 
-            SqlCommand comando = new SqlCommand(sql,conn);
+            SqlCommand comando = new SqlCommand(sql, conn);
             //vonfiguramos los parametros
 
             comando.CommandType = System.Data.CommandType.Text;

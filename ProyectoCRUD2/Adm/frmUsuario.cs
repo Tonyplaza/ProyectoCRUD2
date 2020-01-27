@@ -70,11 +70,18 @@ namespace ProyectoCRUD2.Adm
         {
 
         }
-
+        void oriengendatos()
+        {
+            cargarGridUsuario();
+            dgUsuarios.Columns["imagen"].Visible = false;
+        }
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             encerar();
             cargarGridUsuario();
+            DataGridViewButtonColumn btnSelec = new DataGridViewButtonColumn();
+            btnSelec.Name = "Select";
+            dgUsuarios.Columns.Add(btnSelec);
         }
         private void encerar()
         {
@@ -83,6 +90,36 @@ namespace ProyectoCRUD2.Adm
             this.txtLogin.Text = String.Empty;
             this.txtClave.Text = String.Empty;
             this.cmbTipoUsuario.Text = "Secretaria";
+        }
+
+        private void dgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgUsuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgUsuarios.Columns[e.ColumnIndex].Name == "Select" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgUsuarios.Rows[e.RowIndex].Cells["Select"] as DataGridViewButtonCell;
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\\select.ico");/////Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgUsuarios.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
+                this.dgUsuarios.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
+
+                e.Handled = true;
+            }
+        }
+
+        private void dgUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dgUsuarios.Columns[e.ColumnIndex].Name == "Select")
+            {
+                
+            }
         }
     }
 }

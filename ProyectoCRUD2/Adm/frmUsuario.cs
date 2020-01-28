@@ -118,7 +118,11 @@ namespace ProyectoCRUD2.Adm
         {
             if (this.dgUsuarios.Columns[e.ColumnIndex].Name == "Select")
             {
-                
+                txtId.Text = dgUsuarios.CurrentRow.Cells[1].Value.ToString();
+                txtNombreCompleto.Text = dgUsuarios.CurrentRow.Cells[2].Value.ToString();
+                txtLogin.Text = dgUsuarios.CurrentRow.Cells[3].Value.ToString();
+                txtClave.Text = dgUsuarios.CurrentRow.Cells[4].Value.ToString();
+                cmbTipoUsuario.Text = dgUsuarios.CurrentRow.Cells[5].Value.ToString();
             }
         }
     }

@@ -169,7 +169,7 @@ namespace ProyectoCRUD2.Adm
             }
             if (this.dgUsuarios.Columns[e.ColumnIndex].Name == "Delete")
             {
-                if (MessageBox.Show("¿Estas seguro de eliminar registro de este estudiante?"
+                if (MessageBox.Show("¿Estas seguro de eliminar el registro ?"
                 , "eliminar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     int x = Academico.UsuariosDAO.delete(dgUsuarios.CurrentRow.Cells[2].Value.ToString());
@@ -178,7 +178,6 @@ namespace ProyectoCRUD2.Adm
                 }
             }
         }
-
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 

@@ -4,24 +4,25 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace Academico
 {
     public static class UsuariosDAO
     {
-        private static string cadenaConexion = @"server=DESKTOP-57BM8TN\SQLEXPRESS2016; database= TI2019; user id=sa; password=Lab123456";
+        private static string cadenaConexion = @"server=L-PCT-104\SQLEXPRESS2016; database= TI2019; user id=sa; password=Lab123456";
       
         public static bool validaUsuario(String usuario, string clave)
         {
             SqlConnection conn = new SqlConnection(cadenaConexion);
             string sql = "select idlogin,nombreCompleto " +
                  " from usuarios where login=@login and clave=@clave ";
+            String strclave = GetMD5(clave);
 
             SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
             ad.SelectCommand.Parameters.AddWithValue("@login", usuario);
-            ad.SelectCommand.Parameters.AddWithValue("@clave", clave);
+            ad.SelectCommand.Parameters.AddWithValue("@clave", strclave);
             DataTable dt = new DataTable();
             ad.Fill(dt);
             if (dt.Rows.Count>0)
@@ -41,13 +42,13 @@ namespace Academico
             string sql = "insert into usuarios(nombreCompleto, " +
                 "login,clave,tipoUsuario) values(@nombreCompleto,@login,@clave,@tipoUsuario)";
             //definimos un comando 
+            String strclave = GetMD5(usuarios.clave);//encrypta la clave
             SqlCommand comando = new SqlCommand(sql, conn);
             //vonfiguramos los parametros
-
             comando.CommandType = System.Data.CommandType.Text;
             comando.Parameters.AddWithValue("@nombreCompleto", usuarios.nombreCompleto);
             comando.Parameters.AddWithValue("@login", usuarios.login);
-            comando.Parameters.AddWithValue("@clave", usuarios.clave);
+            comando.Parameters.AddWithValue("@clave", strclave);
             comando.Parameters.AddWithValue("@tipoUsuario", usuarios.tipoUsuario);
             conn.Open();
             int x = comando.ExecuteNonQuery(); //ejecutamos el comando
@@ -105,6 +106,7 @@ namespace Academico
             string sql = "UPDATE usuarios SET nombreCompleto=@nombreCompleto,login=@login,clave=@clave," +
                 "tipoUsuario=@tipoUsuario WHERE idLogin=@idLogin ";
             //definimos un comando 
+            String strclave = GetMD5(usuarios.clave);//encrypta la clave
             SqlCommand comando = new SqlCommand(sql, conn);
             //vonfiguramos los parametros
             conn.Open();
@@ -112,11 +114,21 @@ namespace Academico
             comando.Parameters.AddWithValue("@idLogin", usuarios.idLogin);
             comando.Parameters.AddWithValue("@nombreCompleto", usuarios.nombreCompleto);
             comando.Parameters.AddWithValue("@login", usuarios.login);
-            comando.Parameters.AddWithValue("@clave", usuarios.clave);
+            comando.Parameters.AddWithValue("@clave", strclave);
             comando.Parameters.AddWithValue("@tipoUsuario", usuarios.tipoUsuario);
             int x = comando.ExecuteNonQuery(); //ejecutamos el comando
             conn.Close();
             return x;
+        }
+        public static string GetMD5(string str)
+        {
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = md5.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
         }
     }
 }

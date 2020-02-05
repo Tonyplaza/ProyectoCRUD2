@@ -45,6 +45,7 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -196,6 +197,10 @@
             this.cmbTipoUsuario.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoUsuario.TabIndex = 12;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,5 +249,6 @@
         private System.Windows.Forms.ComboBox cmbTipoUsuario;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnCerrar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

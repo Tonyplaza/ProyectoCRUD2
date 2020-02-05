@@ -63,7 +63,7 @@ namespace ProyectoCRUD2.Adm
                 {
                     MessageBox.Show(ex.Message.ToString());
                 }
-
+                encerar();
                 cargarGridUsuario();
             }
             else
@@ -78,6 +78,7 @@ namespace ProyectoCRUD2.Adm
                 if (x > 0)
                 {
                     cargarGridUsuario();
+                    encerar();
                     MessageBox.Show("Usuario guardado con exito");
                 }
                 else
@@ -176,6 +177,11 @@ namespace ProyectoCRUD2.Adm
                     cargarGridUsuario();
                 }
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
         }
     }
 }

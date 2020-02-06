@@ -27,5 +27,13 @@ namespace ProyectoCRUD2.informe
             this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
+
+        private void frmInformeEstudiantes_Load_1(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dsEstudiantes1.estudiantes' Puede moverla o quitarla según sea necesario.
+            this.estudiantesTableAdapter1.Fill(this.dsEstudiantes1.estudiantes);
+
+            this.reportViewer2.RefreshReport();
+        }
     }
 }

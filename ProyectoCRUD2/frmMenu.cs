@@ -116,5 +116,12 @@ namespace ProyectoCRUD2
             frm1.MdiParent = this;
             frm1.Show();
         }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            informe.frmInformeEstudiantes frm1 = new informe.frmInformeEstudiantes();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
     }
 }

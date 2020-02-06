@@ -110,6 +110,12 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="informe\frmDatosPersonales1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informe\frmDatosPersonales1.Designer.cs">
+      <DependentUpon>frmDatosPersonales1.cs</DependentUpon>
+    </Compile>
     <Compile Include="informe\frmInformeEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,9 +146,13 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="informe\frmDatosPersonales1.resx">
+      <DependentUpon>frmDatosPersonales1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="informe\frmInformeEstudiantes.resx">
       <DependentUpon>frmInformeEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="informe\InformePersonal.rdlc" />
     <EmbeddedResource Include="informe\rptEstudiante.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

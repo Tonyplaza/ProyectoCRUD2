@@ -16,7 +16,7 @@ namespace ProyectoCRUD2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new informe.frmSelecionInforme());
+            Application.Run(new informe.frmSelecciondeDatos());
         }
     }
 }

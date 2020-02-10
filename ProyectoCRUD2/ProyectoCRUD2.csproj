@@ -69,6 +69,9 @@
     <Compile Include="Clases\EstudianteDAO.cs" />
     <Compile Include="Clases\Usuarios.cs" />
     <Compile Include="Clases\UsuariosDAO.cs" />
+    <Compile Include="ds\dsEstudiantes.cs">
+      <DependentUpon>dsEstudiantes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ds\dsEstudiantes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -110,17 +113,17 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="informe\frmDatosPersonales1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="informe\frmDatosPersonales1.Designer.cs">
-      <DependentUpon>frmDatosPersonales1.cs</DependentUpon>
-    </Compile>
     <Compile Include="informe\frmInformeEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="informe\frmInformeEstudiantes.Designer.cs">
       <DependentUpon>frmInformeEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="informe\frmSelecciondeDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informe\frmSelecciondeDatos.Designer.cs">
+      <DependentUpon>frmSelecciondeDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,11 +149,11 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="informe\frmDatosPersonales1.resx">
-      <DependentUpon>frmDatosPersonales1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="informe\frmInformeEstudiantes.resx">
       <DependentUpon>frmInformeEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informe\frmSelecciondeDatos.resx">
+      <DependentUpon>frmSelecciondeDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="informe\InformePersonal.rdlc" />
     <EmbeddedResource Include="informe\rptEstudiante.rdlc" />

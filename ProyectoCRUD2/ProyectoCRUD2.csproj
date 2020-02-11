@@ -65,6 +65,32 @@
     <Compile Include="Adm\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Asignatura\frmActualizarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignatura\frmActualizarAsignatura.Designer.cs">
+      <DependentUpon>frmActualizarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asignatura\frmBorrarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignatura\frmBorrarAsignatura.Designer.cs">
+      <DependentUpon>frmBorrarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asignatura\frmBuscarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignatura\frmBuscarAsignatura.Designer.cs">
+      <DependentUpon>frmBuscarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asignatura\frmGuardarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignatura\frmGuardarAsignatura.Designer.cs">
+      <DependentUpon>frmGuardarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Asignatura.cs" />
+    <Compile Include="Clases\AsignaturaDAO.cs" />
     <Compile Include="Clases\Estudiante.cs" />
     <Compile Include="Clases\EstudianteDAO.cs" />
     <Compile Include="Clases\Usuarios.cs" />
@@ -113,6 +139,12 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="informe\frmInformeAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informe\frmInformeAsignaturas.Designer.cs">
+      <DependentUpon>frmInformeAsignaturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="informe\frmInformeEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +162,18 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Adm\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignatura\frmActualizarAsignatura.resx">
+      <DependentUpon>frmActualizarAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignatura\frmBorrarAsignatura.resx">
+      <DependentUpon>frmBorrarAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignatura\frmBuscarAsignatura.resx">
+      <DependentUpon>frmBuscarAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignatura\frmGuardarAsignatura.resx">
+      <DependentUpon>frmGuardarAsignatura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -149,6 +193,9 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="informe\frmInformeAsignaturas.resx">
+      <DependentUpon>frmInformeAsignaturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="informe\frmInformeEstudiantes.resx">
       <DependentUpon>frmInformeEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +204,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="informe\InformePersonal.rdlc" />
     <EmbeddedResource Include="informe\rptEstudiante.rdlc" />
+    <EmbeddedResource Include="informe\rptInformeAsignaturas.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

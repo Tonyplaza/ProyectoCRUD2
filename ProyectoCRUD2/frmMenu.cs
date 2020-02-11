@@ -123,5 +123,39 @@ namespace ProyectoCRUD2
             frm1.MdiParent = this;
             frm1.Show();
         }
+        private void asignaturasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Asignatura.frmGuardarAsignatura frm1 = new Asignatura.frmGuardarAsignatura();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
+
+        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Asignatura.frmActualizarAsignatura frm1 = new Asignatura.frmActualizarAsignatura();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
+
+        private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Asignatura.frmBorrarAsignatura frm1 = new Asignatura.frmBorrarAsignatura();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Asignatura.frmBuscarAsignatura frm1 = new Asignatura.frmBuscarAsignatura();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
+
+        private void informeDeAsignaturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            informe.frmInformeAsignaturas frm1 = new informe.frmInformeAsignaturas();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
     }
 }

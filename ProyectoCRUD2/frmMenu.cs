@@ -157,5 +157,12 @@ namespace ProyectoCRUD2
             frm1.MdiParent = this;
             frm1.Show();
         }
+
+        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            informe.frmSelecciondeDatos frm1 = new informe.frmSelecciondeDatos();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
     }
 }

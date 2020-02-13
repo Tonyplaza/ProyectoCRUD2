@@ -159,6 +159,18 @@
     <Compile Include="informe\frmInformeEstudiantes.Designer.cs">
       <DependentUpon>frmInformeEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="informe\frmRecordAcad_MostrarRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informe\frmRecordAcad_MostrarRecord.Designer.cs">
+      <DependentUpon>frmRecordAcad_MostrarRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="informe\frmRecordAcad_selEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informe\frmRecordAcad_selEstudiante.Designer.cs">
+      <DependentUpon>frmRecordAcad_selEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="informe\frmSelecciondeDatos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="informe\frmInformeEstudiantes.resx">
       <DependentUpon>frmInformeEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informe\frmRecordAcad_MostrarRecord.resx">
+      <DependentUpon>frmRecordAcad_MostrarRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informe\frmRecordAcad_selEstudiante.resx">
+      <DependentUpon>frmRecordAcad_selEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="informe\frmSelecciondeDatos.resx">
       <DependentUpon>frmSelecciondeDatos.cs</DependentUpon>
